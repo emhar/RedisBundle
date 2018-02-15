@@ -78,4 +78,8 @@ class RedisDataCollector extends DataCollector
 
         return ($totalExecutionTime) ? ($totalExecutionTime / count($this->getCommands())) : 0;
     }
+    
+    public function reset(){
+        $this->data['redis'] = new \SplQueue();
+    }
 }
